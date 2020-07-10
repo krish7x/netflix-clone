@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.row__posters {
+	display: flex;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	padding: 20px;
+	margin-right: 10px;
+	scroll-behavior: smooth;
+}
+.row__posters::-webkit-scrollbar {
+	display: none;
+}
+
+.row__poster {
+	object-fit: contain;
+	max-height: 100px;
+	width: max-content;
+	transition: transform 450ms;
+	margin-left: 20px;
+}
+
+.row__poster:hover {
+	transform: scale(1.2);
+}
+
+.row__posterLarge {
+	max-height: 250px;
+}
+
+.row__posterLarge:hover {
+	transform: scale(1.1);
+}
+
+.row__title {
+	color: #e5e5e5;
+	margin-left: 2rem;
+	margin-top: 10px;
+	font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 770px) {
+	.row__poster {
+		margin-left: 1rem;
+	}
+	.row__title {
+		font-size: 20px;
+	}
+}
