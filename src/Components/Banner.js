@@ -5,17 +5,15 @@ import "./Banner.css";
 
 const Banner = () => {
 	const [movie, setMovie] = useState([]);
+	const fetchData = async () => {
+		const req = await Axios.get(requests.fetchTrending);
+		setMovie(
+			req.data.results[Math.floor(Math.random() * req.data.results.length - 1)]
+		);
+		return req;
+	};
 
 	useEffect(() => {
-		const fetchData = async () => {
-			const req = await Axios.get(requests.fetchTrending);
-			setMovie(
-				req.data.results[
-					Math.floor(Math.random() * req.data.results.length - 1)
-				]
-			);
-			return req;
-		};
 		fetchData();
 	}, []);
 
