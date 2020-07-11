@@ -17,7 +17,7 @@ const Banner = () => {
 	const [movie, setMovie] = useState([]);
 	const [trailerUrl, setTrailerUrl] = useState("");
 	const fetchData = async () => {
-		const req = await Axios.get(requests.fetchTrending);
+		const req = await Axios.get(requests.fetchTopRated);
 		setMovie(
 			req.data.results[Math.floor(Math.random() * req.data.results.length - 1)]
 		);
