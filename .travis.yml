@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - "node"
+warnings_are_errors: false
+
+install:
+  - npm install
+
+script:
+  - npm run build
+
+deploy:
+  provider: firebase
+  skip_cleanup: true
+  token:
+    secure: "1//0gytOWN5r-ohKCgYIARAAGBASNwF-L9Ir0Djgudym9qtZTMxozCEHFa0EeJuPWAcTrw15JIuMrarF-QjjuvkqpjB0Ks9_Ntpdk5s"
